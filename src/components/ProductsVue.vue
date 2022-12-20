@@ -9,8 +9,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(product, index) in products" :key="product">
-          <th scope="row">{{ index + 1 }}</th>
+        <tr v-for="(product, index) in products" :key="product.id">
+          <td>{{ index }}</td>
           <td>{{ product.brand }}</td>
           <td>{{ product.serialNumber }}</td>
           <td>{{ product.userName }}</td>
@@ -25,7 +25,7 @@ export default {
   computed: {
     ...mapGetters(["products"]),
   },
-  method: {
+  methods: {
     ...mapActions(["fetchProducts"]),
   },
   created() {
