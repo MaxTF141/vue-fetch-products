@@ -2,7 +2,7 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    products: [],
+    products: null,
 
   },
   getters: {
@@ -20,7 +20,7 @@ export default createStore({
       return fetch("https://maxtf141.github.io/ProductsAPI/data.json")
       .then((response)=> response.json())
       .then((data)=>{
-        context.commit("setProducts", data)
+        context.commit("setProducts", data.products)
       })
       .catch((err) => console.error(err));
     }

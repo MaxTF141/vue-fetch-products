@@ -10,7 +10,7 @@
       </thead>
       <tbody>
         <tr v-for="(product, index) in products" :key="product.id">
-          <td>{{ index }}</td>
+          <td>{{ index + 1 }}</td>
           <td>{{ product.brand }}</td>
           <td>{{ product.serialNumber }}</td>
           <td>{{ product.userName }}</td>
